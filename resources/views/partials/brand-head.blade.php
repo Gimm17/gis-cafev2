@@ -4,7 +4,7 @@
 
 <script>
   // GIS — Premium Clean (logo-driven palette)
-  // NOTE: We use CSS vars for "auto" theme (light/dark via prefers-color-scheme).
+  // NOTE: Forced LIGHT theme.
   tailwind.config = {
     theme: {
       extend: {
@@ -13,7 +13,7 @@
           display: ['Playfair Display', 'serif'],
         },
         colors: {
-          // dynamic colors (light/dark) via CSS vars
+          // fixed colors (light) via CSS vars
           bone: 'rgb(var(--bone-rgb) / <alpha-value>)',
           surface: 'rgb(var(--surface-rgb) / <alpha-value>)',
           surface2: 'rgb(var(--surface2-rgb) / <alpha-value>)',
@@ -58,22 +58,7 @@
     --shadow-2: 0 8px 22px rgba(11,16,32,.08);
   }
 
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bone-rgb: 10 14 22;     /* deep navy */
-      --surface-rgb: 16 23 42;  /* #10172A */
-      --surface2-rgb: 16 23 42;
-      --ink-rgb: 235 241 255;   /* #EBF1FF */
-      --muted-rgb: 160 174 196; /* #A0AEC4 */
-      --line-rgb: 235 241 255;
 
-      --shadow-1: 0 18px 46px rgba(0,0,0,.42);
-      --shadow-2: 0 10px 26px rgba(0,0,0,.34);
-    }
-
-    /* a bit softer grain in dark */
-    .grain:before{ mix-blend-mode: overlay; opacity: .16; }
-  }
 
   html, body{ font-family: 'Inter', sans-serif; background: rgb(var(--bone-rgb) / 1); color: rgb(var(--ink-rgb) / 1); }
 
